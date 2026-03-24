@@ -1,0 +1,34 @@
+DOMAINS
+  listl = integer* % Список целых чисел
+
+PREDICATES
+  start
+  in_list(integer, listl)
+  search_list(listl)
+  
+ClAUSES
+% Заполнение списка
+  in_list(0, []) :- !.
+  in_list(N, [H|T]) :-
+    write("Enter count: "),
+    readint(H),
+    N1 = N - 1,
+    in_list(N1, T).
+
+% Проверка списка на возрастание
+  search_list([]).	% Пустой список
+  search_list([_]).	% Список из любого (_) элемента
+  search_list([X, Y | Tail]) :-
+    X <= Y,
+    search_list([Y | Tail]).
+  
+  start :-
+    write("Enter number of actions in list: "),
+    readint(N),
+    in_list(N, L),
+    search_list(L),
+    write("True"), nl;
+    write("False").
+    
+GOAL
+  start.

@@ -2,7 +2,7 @@ DOMAINS
   n = integer
 
 PREDICATES
-  start
+  start		% Просто для запуска и ничего не принимает
   count_sum(n, n) % (число, сумма его чисел)
   curr_step_itg(n, n, n) % (Текущее число, Счётчик, Итог)
 
