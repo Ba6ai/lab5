@@ -16,7 +16,7 @@ ClAUSES
     in_list(N1, T).
 
 % Проверка списка на возрастание
-  search_list([]).	% Пустой список
+  search_list([]).	% Базовый случай: условия успешного завершения кода
   search_list([_]).	% Список из любого (_) элемента
   search_list([X, Y | Tail]) :-
     X <= Y,
@@ -27,7 +27,7 @@ ClAUSES
     readint(N),
     in_list(N, L),
     search_list(L),
-    write("True"), nl;
+    write("True"), nl; % двоеточие обозначает запасной вариант дальше по коду
     write("False").
     
 GOAL
