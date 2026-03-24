@@ -1,5 +1,5 @@
 DOMAINS
-  listl = integer* % Список целых чисел
+  listl = integer* % Список, элементы которого - целые числа
 
 PREDICATES
   start
